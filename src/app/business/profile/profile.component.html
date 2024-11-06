@@ -1,1 +1,26 @@
-<p>profile works!</p>
+<div class="container">
+    <h2>Información de Usuario</h2>
+    <form [formGroup]="profileForm">
+        <div class="form-group">
+            <label for="userId">Nombre de Usuario:</label>
+            <input type="text" class="form-control" formControlName="userId" id="userId" name="userId" placeholder="Nombre de Usuario" required>
+        </div>
+        <div class="form-group">
+            <label for="full_name">Nombre Completo:</label>
+            <input type="text" class="form-control" formControlName="full_name" id="full_name" name="full_name" placeholder="Nombre Completo" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" formControlName="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Contraseña:</label>
+            <input type="password" class="form-control" formControlName="password" id="password" name="password" placeholder="Contraseña" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Dirección de Residencia:</label>
+            <input type="text" class="form-control" formControlName="address" id="address" name="address" placeholder="Dirección de Residencia" required>
+        </div>
+        <button type="button" class="btn btn-success" [class.disabled]="profileForm.invalid" [disabled]="profileForm.invalid" (click)="updateUser()">Actualizar</button>
+    </form>
+</div>

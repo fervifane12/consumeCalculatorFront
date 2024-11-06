@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -21,12 +22,3 @@ export const routes: Routes = [
         pathMatch:'full'
     }
 ];
-
-@NgModule({
-    imports:[
-      RouterModule.forRoot(routes),
-      ReactiveFormsModule
-    ],
-    exports:[RouterModule]
-  })
-  export class AppRoutingModule{};

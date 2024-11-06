@@ -1,7 +1,6 @@
-
 <div class="container">
-    <h2 class="display-5">Registro de usuario</h2>
-    <form>
+    <h2 class="display-5">Información de Usuario</h2>
+    <form [formGroup]="profileForm">
         <div class="form-group">
             <label for="userId">Nombre de Usuario:</label>
             <input type="text" class="form-control" formControlName="userId" id="userId" name="userId" placeholder="Nombre de Usuario" required>
@@ -22,6 +21,6 @@
             <label for="address">Dirección de Residencia:</label>
             <input type="text" class="form-control" formControlName="address" id="address" name="address" placeholder="Dirección de Residencia" required>
         </div>
-        <button type="button" class="btn btn-success">Registrarse</button>
+        <button type="button" class="btn btn-success" [class.disabled]="profileForm.invalid" [disabled]="profileForm.invalid" (click)="createUser()">Registrarse</button>
     </form>
 </div>

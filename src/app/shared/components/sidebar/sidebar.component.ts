@@ -1,6 +1,8 @@
 import { NgIf } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { LoginService } from '../../../services/auth/login.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,9 +15,15 @@ export class SidebarComponent implements OnInit{
   
   userLoginOn:boolean = false;
 
-  constructor() { }
+  constructor(private http:HttpClient, private loginService:LoginService) { }
 
   ngOnInit(): void {
-    
+  }
+
+  isLogedIn(){
+    if (this.loginService.isLoggedIn()){
+      this.userLoginOn=true;
+      console.log(this.userLoginOn);
+    } 
   }
 }
